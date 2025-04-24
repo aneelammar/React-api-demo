@@ -1,5 +1,6 @@
 import react, { useEffect, useState } from "react";
 import { getPosts, deletePost } from "../services/postService";
+import PostForm from "./PostForm";
 
 export default function Posts() {
   const [posts, setPosts] = useState([]);
@@ -27,6 +28,7 @@ export default function Posts() {
   return (
     <div>
       <h1>Posts</h1>
+      <PostForm posts={posts} setPosts={setPosts}></PostForm>
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
